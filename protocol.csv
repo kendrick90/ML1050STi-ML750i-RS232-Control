@@ -1,0 +1,244 @@
+"ML1050STi / ML750i
+10/12",Function (SEND/Write),Function Description,7/6 Joyce Memo ; 2023/4/13 Joyce memo,RS232 ASCII code,HEX Code,Value Description,RESPONSE (SUCCESS),Fail,Mode-Standby,Mode - Normal,Mode - Digital Signage,Mode - Broadcast Msg
+V,Set Power On,Power On Projector,,~XX00 1,7E 30 30 30 30 20 31 0D,On,P,F,,Disable,,
+V,Set Power Off,Power Off Projector,,~XX00 0/2,7E 30 30 30 30 20 30 0D,Off (0/2 for backward compatible),P,F,,,,
+V,Set AVMute,Turn on AV Mute,AV Mute 影音/ ,~XX02 1,7E 30 30 30 32 20 31 0D,On,P,F,Disable,,,
+V,Set AVMute Off,Turn off AV Mute,,~XX02 0/2,7E 30 30 30 32 20 30 0D,Off (0/2 for backward compatible),P,F,Disable,,,
+V,Set Audio Mute On,Turn On Audio Mute,Audio Mute 聲音,~XX03 1,7E 30 30 30 33 20 31 0D,On,P,F,Disable,,,
+V,Set Audio Mute Off,Turn Off Audio Mute ,,~XX03 0/2,7E 30 30 30 33 20 30 0D,Off (0/2 for backward compatible),P,F,Disable,,,
+V,Set Source,Source switch to HDMI,"1.) Source Switch 這項(逐次跳)和其他 Source Switch to  項目有甚麼不同(Direct Jump)
+2.) USB-A for Reader ? (TBC can be added)
+[Calvin 7/8] 7/12前整合回覆
+[Calvin 7/13] 保留Home,再新增Type-A source 技術可以達成.
+但是實際Home 與Type-A 共用(視為)同一個Source. Core 無需增加.
+[Joyce7/15]: Calvin TBC 如何抓到 USB-A content/ Internal memory.
+[Fiona 7/19]: 此為Input source direct command,無逐次跳的功能",~XX12 1,7E 30 30 31 32 20 31 0D,HDMI (HDMI 1),P,F,Disable,,Disable,Disable
+V,,Source switch to USB-A,,~XX12 17,7E 30 30 31 32 20 31 37 0D,USB-A (Flash Drive),P,F,Disable,,Disable,Disable
+V,,Source switch to SD Card,,~XX12 31,7E 30 30 31 32 20 33 31 0D,SD Card,P,F,Disable,,Disable,Disable
+V,,Source switch to Android Home page,,~XX12 24,7E 30 30 31 32 20 32 34 0D,Home (Smart TV),P,F,Disable,,Disable,Disable
+V,Set Reset to default (Factory Reset),Process Factory Reset for customer,"Factory Reset (回到工廠出廠設定值)/ Reset OSD (客人調過的 OSD值清掉) 有甚麼不同。
+但是有些項目不可清除: TBC by Calvin
+[Calvin7/8] 請參考7/7所提供各款OSD reset可以清除的項目 ",~XX112 1,7E 30 30 31 31 32 20 31 0D,,P,F,Disable,,,
+V,Set Reset All Settings (Reset OSD),Process Reset OSD for customer,,~XX546 1,7E 30 30 35 34 36 20 31 0D,,P,F,Disable,,,
+V,Set Language,Select OSD Language,可以看到多種語言來選擇嗎 ?,~XX70 1,7E 30 30 37 30 20 31 0D,English,P,F,Disable,,,
+V,,,,~XX70 2,7E 30 30 37 30 20 32 0D,German,P,F,Disable,,,
+V,,,,~XX70 3,7E 30 30 37 30 20 33 0D,French,P,F,Disable,,,
+V,,,,~XX70 4,7E 30 30 37 30 20 34 0D,Italian,P,F,Disable,,,
+V,,,,~XX70 5,7E 30 30 37 30 20 35 0D,Spanish,P,F,Disable,,,
+V,,,,~XX70 6,7E 30 30 37 30 20 36 0D,Portuguese,P,F,Disable,,,
+V,,,,~XX70 7,7E 30 30 37 30 20 37 0D,Polish,P,F,Disable,,,
+V,,,,~XX70 8,7E 30 30 37 30 20 38 0D,Dutch(Nederlands),P,F,Disable,,,
+V,,,,~XX70 9,7E 30 30 37 30 20 39 0D,Swedish,P,F,Disable,,,
+V,,,,~XX70 17,7E 30 30 37 30 20 31 37 0D,Russian,P,F,Disable,,,
+V,,,,~XX70 20,7E 30 30 37 30 20 32 30 0D,Arabic,P,F,Disable,,,
+V,,,,~XX70 22,7E 30 30 37 30 20 32 32 0D,Turkish,P,F,Disable,,,
+V,Set Freeze,Set freeze function,整個畫面 Freeze/unFreeze ? Yes 同時聲音不會聽到,~XX04 1,7E 30 30 30 34 20 31 0D,Freeze,P,F,Disable,,,
+V,Set Unfreeze,Set unfreeze function,,~XX04 0,7E 30 30 30 34 20 30 0D,Unfreeze,P,F,Disable,,,
+V,Set Remote Menu,Display OSD main menu,"只有遠端操作讓OSD Main menu 顯示出來 ? (TBC)
+be w/ item 12-16.
+[Calvin7/8] 已將此項目從Item 8 變更為Item 11 
+將相關Remote控制指令集中在一起.(Item 11~16)",~XX140 20,7E 30 30 31 34 30 20 32 30 0D,Menu,P,F,Disable,,,Disable
+V,Set Remote Direction Up,Process OSD menu- Up function,,~XX140 10,7E 30 30 31 34 30 20 31 30 0D,Up,P,F,Disable,,,Disable
+V,Set Remote Direction Left,Process OSD menu- Left function,,~XX140 11,7E 30 30 31 34 30 20 31 31 0D,Left,P,F,Disable,,,Disable
+V,Set Remote Direction Enter ,Process OSD menu- Enter function,,~XX140 12,7E 30 30 31 34 30 20 31 32 0D,Enter (for projection menu),P,F,Disable,,,Disable
+V,Set Remote Direction Right,Process OSD menu- Right function,,~XX140 13,7E 30 30 31 34 30 20 31 33 0D,Right,P,F,Disable,,,Disable
+V,Set Remote Direction Down,Process OSD menu- Down function,,~XX140 14,7E 30 30 31 34 30 20 31 34 0D,Down,P,F,Disable,,,Disable
+V,Set Remote Direction Set Volume -,Set Volume -,,~XX140 17,7E 30 30 31 34 30 20 31 37 0D,Volume -,P,F,Disable,,,
+V,Set Remote Direction Set Volume +,Set Volume +,,~XX140 18,7E 30 30 31 34 30 20 31 38 0D,Volume +,P,F,Disable,,,
+V,Set Remote Direction AV Mute,Set AV Mute,,~xx140 24,7E 30 30 31 34 30 20 32 34 0D,AV Mute,P,F,Disable,,,
+V,Set Remote Direction_Freeze,Set Freeze  ,,~XX140 30 ,7E 30 30 31 34 30 20 33 30 0D,Freeze,P,,,,,
+V,Set Remote Direction_AspectRatio,Set Aspect Ratio ,,~XX140 37,7E 30 30 31 34 30 20 33 37 0D,Aspect Ratio,P,F,Disable,,,
+V,Set Projection,Set Projection mode,,"~XX71 1
+(value 與原D51不同)",7E 30 30 37 31 20 31 0D,Front-Desktop,P,F,Disable,,,
+V,,,,"~XX71 2
+(value 與原D51不同)",7E 30 30 37 31 20 32 0D,Rear-Desktop,P,F,Disable,,,
+V,,,,"~XX71 3
+(value 與原D51不同)",7E 30 30 37 31 20 33 0D,Front-Ceiling,P,F,Disable,,,
+V,,,,"~XX71 4
+(value 與原D51不同)",7E 30 30 37 31 20 34 0D,Rear-Ceiling,P,F,Disable,,,
+V,"
+Set Display Mode",Set Display Mode,,~XX20 1,7E 30 30 32 30 20 31 0D ,PC (Presentation),P,F,Disable,,,
+V,,,,~XX20 2,7E 30 30 32 30 20 32 0D,Bright,P,F,Disable,,,
+V,,,,~XX20 3,7E 30 30 32 30 20 33 0D,Cinema,P,F,Disable,,,
+V,,,,~XX20 4,7E 30 30 32 30 20 34 0D,sRGB,P,F,Disable,,,
+V,,,,~XX20 9,7E 30 30 32 30 20 39 0D,3D,P,,Disable,,,
+V,,,,~XX20 16,7E 30 30 32 30 20 31 36 0D,Photo (Vivid),P,F,Disable,,,
+V,,,,~XX20 44,7E 30 30 32 30 20 34 34 0D,Eco,P,,,,,
+V,Set Brightness,Set Brightness value,右邊F 行描述的行為是 ? ,~XX21 n,7E 30 30 32 31 20 a 0D,n = 0 (a=30) ~ 10 (a=31 30),P,F,Disable,,,
+V,Set Contrast,Set Contrast value,右邊F 行描述的行為是 ? ,~XX22 n,7E 30 30 32 32 20 a 0D,n = 0 (a=30) ~ 10 (a=31 30),P,F,Disable,,,
+V,Set Color Temperature,Set color temperature,,~XX36 1,7E 30 30 33 36 20 31 0D,Standard (D75),P,F,Disable,,,
+V,,,,~XX36 3,7E 30 30 33 36 20 33 0D ,Cold (D83),P,F,Disable,,,
+V,,,,~XX36 4,7E 30 30 33 36 20 34 0D,Warm (D65),P,F,Disable,,,
+V,"Set Digital Zoom 
+(For D51+)",Set Digital Zoom (50%~200%; 25%/step),"1.) 看不懂B行描述
+2.) OSD menu 裡面沒有這項。TBC Calvin with 芯智- 7/E
+[Calvin 7/8]  確認MT9669 不支援Digiral Zoom
+[JoyceH7/8: TBC-Calvin JMGO O1]
+[Calvin 7/13] Core 購買機台已被拆解,無法實機確認
+[Joyce7/15: CORE check 網路上競品規格]
+[Calvin 7/19] 提供JMGO O1/Digital Zoom 影片,僅支援Zoom out,不支援Zoom in. OSD 會隨背景連動縮放,無法達成Zoom out 調整下,OSD 固定大小.
+",~XX62 n,7E 30 30 36 32 20 a 0D,"50%: n = 0 (a=30) 
+75%: n = 1 (a=31)
+100%: n = 2 (a=32)
+125%:  n = 3 (a=33)
+150%: n = 4 (a=34) 
+175%: n = 5 (a=35) 
+200%: n = 6 (a=36) ",P,F,Disable,,,
+V,Set Auto Keystone Enable,Set Auto Keystone On/Off,"依據F行，只有On/Off ? Yes.
+TBC Calvin 7/E demo for Auto HV keystone[Calvin 7/8] NA",~XX69 0,7E 30 30 36 39 20 30 0D,Off,P,F,Disable,,,
+V,Set Auto Keystone Disable,,,~XX69 1,7E 30 30 36 39 20 31 0D,On,P,F,Disable,,,
+V,Set Aspect Ratio,Set Aspect Ratio Format,,~XX60 1,7E 30 30 36 30 20 31 0D,4:3,P,F,Disable,,,
+V,,,,~XX60 2,7E 30 30 36 30 20 32 0D,16:9,P,F,Disable,,,
+V,,,,~XX60 3,7E 30 30 36 30 20 33 0D,16:10,P,F,Disable,,,
+V,,,,"~XX60 7 
+(修正command與大表不同)",7E 30 30 36 30 20 37 0D,Auto ,P,F,Disable,,,
+V,Set Digital Signage,Set Digital Signage Enable/Disable,,~xx569 1,7E 30 30 35 36 39 20 31 0D,Off,P,F,Disable,,,
+V,,,,~xx569 2,7E 30 30 35 36 39 20 32 0D,On,P,F,Disable,,,
+,,,,,,,,,,,,
+"D51 renew
+  
+10/12",Function (READ),Function Description,7/6 Joyce Memo ; 2023/4/13 Joyce memo,RS232 ASCII code,HEX Code,Value Description,RESPONSE (SUCCESS),Fail,,,,
+V,Read Power State,"Get projector status (Power on/off)
+
+*For reply EA question2: ""Add a Get command for Projector Power On or Standby only"". 
+*L23 & D51 Renew NO Standby Mode.",是要知道機台是正在開機或關機狀態 ? Yes,~XX124 1,7E 30 30 31 32 34 20 31 0D,,"Ok0 off
+Ok1 on",F,,,,
+V,Read AVmute state,Get AV mute status,,~XX355 1,7E 30 30 33 35 35 20 31 0D,,"Ok0 off
+Ok1 on",F,Disable,,,
+V,Read Audio Mute Status,Get Audio Mute Status,,~XX356 1,7E 30 30 33 35 36 20 31 0D,,"Ok0 off
+Ok1 on",F,Disable,,,
+V,Read Input Source,Get Current Input Source Settings,"1.) L23 Input I/O沒那麼多
+2.) 作動方式 ?",~XX121 1,7E 30 30 31 32 31 20 31 0D,,"Oka
+a=7 HDMI 1
+a=20 Home (Smart TV, incl. USB-A/SD card)
+",F,Disable,,,
+V,Read Lightsource Hour,Get Light Source Hours of Usage,,~XX108 1  ,7E 30 30 31 30 38 20 31 0D,(5 digits) Total Lamp Hours,Oknnnnn,F,Disable,,,
+V,Read System Temperature,Get System Temperature,"Oka, a = 換算數值for Temp",~XX352 1,7E 30 30 33 35 32 20 31 0D,"Okaaa, aaa=000~999
+a = 換算數值for Temp",Okaaa,F,Disable,,,
+V,Read DDP Software Version,Get DDP Software Version,主要 show DDP S/W version,~XX357 3,7E 30 30 33 35 37 20 33 0D,aaa = DDP Software version,"Okaaa
+",F,Disable,,,
+V,Read MacAddress,"Get Network MAC address
+(D51 renew/ L23: to get Device Mac Address)","One set Mac Address (L23 M/B Mac Address) TBC-Calvin
+[Calvin 7/8] Wi-Fi 無線與有線有各自的MAC Address. 投影機僅
+顯示有線的MAC address.WiFi 無線MAC Address顯示在無線WiFi模組內",~XX555 2,7E 30 30 35 35 35 20 32 0D,##:##:##:##:##:## : mac address,Ok##:##:##:##:##:##,F,Disable,,,
+V,Read Network Status,"Get WiFi connect status
+(WLAN Settings /Network State- WiFi dongle)",Ask regions: Will toB users scenerio need wifi dongle during Ctrl application ?,~XX451 1,7E 30 30 34 35 31 20 31 0D,,"Ok0 Disconnected
+Ok1 Connected",F,Disable,,,
+V,Read Device ID,Get Projector ID,,~XX558 1,7E 30 30 35 35 38 20 31 0D,a=00~99,Okaa (follow OSD setting),F,Disable,,,
+V,Read Software Version,"Get Software Version
+(Get completed software version)","TBC Calvin
+基本上 Android version 可show Android ver/ DDP ver
+[Calvin 7/8] 可以顯示Android 及DDP軟體版本",~XX122 1,7E 30 30 31 32 32 20 31 0D,"OkAaaMbbLccHddSeeXff
+Aaa=DDP ver.
+Mbb=MCU ver.
+Lcc=LAN ver.
+Hdd=HDBaseT ver.
+See=Android ver. (Ree=RK ver. 如果用RK SoC)
+Xff=Other IC ver.",OkAaaMbbLccHddSeeXff,F,Disable,,,
+V,Read Projection Hour (System Hours),Get System Hours of Usage,"Remove Lamp- TBC Calvin
+[Calvin 7/8] 已修改完畢",~XX150 21 ,7E 30 30 31 35 30 20 32 31 0D,aaaaa=00000~99999,Okaaaaa,F,Disable,,,
+V,Read Fan1 status,Get Fan 1 speed (Sys Fan 1),L23 only one Fan,~XX351 0,7E 30 30 33 35 31 20 30 0D,aaaa=0000~9999(RPM),Okaaaa,F,Disable,,,
+V,Get Fan2 status,Get Fan 2 speed  (Sys Fan 2),,~XX351 1,7E 30 30 33 35 31 20 31 0D,aaaa=0000~9999(RPM),Okaaaa,F,Disable,,,
+V,Get Fan3 status,Get Fan 3 speed  (Optical Fan),,~XX351 2,7E 30 30 33 35 31 20 32 0D,aaaa=0000~9999(RPM),Okaaaa,F,Disable,,,
+V,Read Projection Mode,Get Projection Mode,,~XX129 1,7E 30 30 31 32 39 20 31 0D,"a=0 Front-Desktop
+a=1 Rear-Desktop 
+a=2 Front-Ceiling
+a=3 Rear-Ceiling",Oka,F,Disable,,,
+V,Read Display Mode,Get Picture Mode Settings,,~XX123 1,7E 30 30 31 32 33 20 31 0D,"a = 1 Presentation (PC)
+a = 2 Bright
+a = 3 Cinema 
+a = 4 sRGB
+a = 9 3D
+a = 12 Game
+a = 14 Photo (Vivid) 
+a= 21 HDR
+a= 25 HLG
+a= 41 AI-PQ 
+a=42 WCG
+a=43 Eco
+",Oka,F,Disable,,,
+V,Read V. Keystone value,Get V Keystone settings,"TBC Calvin- V or H keystone etc.
+[Calvin 7/8] Mockup 組立後驗證, 短焦暫定 -10~10度
+[JoyceH7/8: TBC Calvin degree range]",~XX543 3,7E 30 30 35 34 33 20 33 0D,a=%,"Oka
+a= range -40~40 ",F,Disable,,,
+V,Read Brightness,Get Brightness Settings,,~XX125 1,7E 30 30 31 32 35 20 31 0D,aaa can be 0~+10,Okaaa,F,Disable,,,
+V,Read Contrast,Get Contrast Settings,,~XX126 1,7E 30 30 31 32 36 20 31 0D,aaa can be  0~+10,Okaaa,F,Disable,,,
+V,Read Color Temperature,Get Color Temperature Settings,,~XX128 1,7E 30 30 31 32 38 20 31 0D,"a=2 Standard
+a=3 Warm
+a=5 Cold","Oka
+",F,Disable,,,
+V,Read Digital Zoom,Get digital zoom settings,"TBC Calvin
+[Calvin 7/8] 確認MT9669 不支援Digiral Zoom
+[JoyceH7/8: TBC-Calvin JMGO O1]
+[Calvin 7/13] Core 購買機台已被拆解,無法實機確認
+[Joyce7/15: CORE check 網路上競品規格]
+[Calvin 7/19] 
+提供JMGO O1/Digital Zoom 影片,僅支援Zoom out,不支援Zoom in. OSD 會隨背景連動縮放,無法達成Zoom out 調整下,OSD 固定大小.
+",~XX543 9,7E 30 30 35 34 33 20 39 0D,a=%,"Oka
+a=0 (50%)
+a=1 (75%)
+a=2 (100%)
+a=3 (125%)
+a=4 (150%)
+a=5 (175%) 
+a=6 (200%)",F,Disable,,,
+V,Read Aspect Ratio,Get Aspect Ratio Settings,,~XX127 1,7E 30 30 31 32 37 20 31 0D,"aa=1 4:3
+aa=2 16:9
+aa=3 16:10
+aa=6 Native
+aa=7 Auto",Okaa,F,Disable,,,
+V,Read Volume,Get Volume Settings,A= Volume 0~10,~XX120 1 ,7E 30 30 31 32 30 20 31 0D,a=0-10,Oka,F,Disable,,,
+V,Read System Information1,"Get Projector(Power) Status, FW versions, Input Source
+
+*For reply EA question1 ""Add a Get commnd similar to ~XX150,  where user can obtain a string of info with one query: Projector Satus, FW verison, Input Source, etc…""","Information 1: 
+","~XX150 1
+",7E 30 30 31 35 30 20 31 0D,"a=Power Status:
+a= 0 Power Off ; a=1 Power On
+bbbbb= Lamp Hour (RGBLaser  Hours) 
+bbbbb=00000
+c= Input Source
+cc= 07 HDMI1
+cc= 20 Android (incl. USB-A and SD card)
+d= Firmware Version 
+dddd= Firmware Version (DDP FW version)
+ee=00, e = Picture mode
+ee=01 Presentation (PC)
+ee=02 Bright
+ee=03 Cinema
+ee=04 sRGB
+ee=14 Photo(Vivid)
+ee=28 Eco
+ee=29 iDevice","Okabbbbbccddddee
+
+
+",F,Disable,,,
+V,Read Signal Status,"Get signal status of currunt input source
+
+*For reply EA question3: ""Add Get command for Signal Status: Yes, No  (Unless Get input command already reports signal active?)""",,~XX150 23,7E 30 30 31 35 30 20 32 33 0D,"a=1 Yes (Active) 
+a=0 No (Inactive)",Oka,F,Disable,,,
+V,Read Signal Status,Get source  resolution,,~XX150 4,7E 30 30 31 35 30 20 34 0D,- Resolution,Oka  (a = string (e.g. Ok1920x1200),F,Disable,,,
+V,Read Signal Status,Get refresh rate,,~XX150 19,7E 30 30 31 35 30 20 31 39 0D,Refresh rate,Oka  (a = string (Refresh rate e.g. Ok60Hz)),F,Disable,,,
+V,Read Digital Signage,Get Digital Signage Enable or Disable Status,,~xx568 1,7E 30 30 35 36 38 20 31 0D,"a = 0 Off
+a = 1 On","Oka
+",F,Disable,,,
+V,Read Android Software Version,"Read Android Software Version
+(Prefix & Length depends on model)",,~XX357 4,7E 30 30 33 35 37 20 34 0D,"Okeee
+eee = Android Software Version ","Okeee
+eee = Android Software Version ",F,Disable,,,
+,,,,,,,,,,,,
+"D51 renew
+  
+10/12",System Message (System Auto Send),Message Date,,,,,,,,,,
+V,Standby Mode,INFO0,"by AUTO, 不需要下 commands
+TBC Calvin- 多久回傳一次 Message Date
+[Calvin 7/8] B77 ~ B83, 過溫,Fan Lock都是該事件被觸發後才會自動送出.
+[JoyceH7/8: 只會發出一次]
+[Joyce7/15: all PJ w/ the RS232 behavior, 會記錄在fty mode's Error Log]
+",,,,,,,,,
+V,Warming up,INFO1,,,,,,,,,,
+V,Out of Range,INFO3,,,,,,,,,,
+V,Fan Lock,INFO6,,,,,,,,,,
+V,Over Temperature,INFO7,,,,,,,,,,
+,"*Above column#134~#141 are -  For reply EA question4: 
+""Add Get command for to query Error: Return Info messages.""
+*System Message (System Auto Send), it is by AUTO.",,,,,,,,,,,
